@@ -1,0 +1,64 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "nom": "Smartphone",
+            "preu": 799,
+            "categoria": "electrònica"
+        },
+        {
+            "id": 2,
+            "nom": "Auriculars",
+            "preu": 199,
+            "categoria": "accessoris"
+        },
+        {
+            "id": 3,
+            "nom": "Portàtil",
+            "preu": 1500,
+            "categoria": "electrònica"
+        },
+        {
+            "id": 4,
+            "nom": "Càmera fotogràfica",
+            "preu": 1200,
+            "categoria": "fotografia"
+        },
+        {
+            "id": 5,
+            "nom": "Rellotge intel·ligent",
+            "preu": 250,
+            "categoria": "wearable"
+        },
+        {
+            "id": 6,
+            "nom": "Teclat mecànic",
+            "preu": 130,
+            "categoria": "perifèrics"
+        },
+        {
+            "id": 7,
+            "nom": "Monitor 4K",
+            "preu": 600,
+            "categoria": "electrònica"
+        },
+        {
+            "id": 8,
+            "nom": "Cadira gaming",
+            "preu": 300,
+            "categoria": "mobilari"
+        },
+        {
+            "id": 9,
+            "nom": "Consola de videojocs",
+            "preu": 500,
+            "categoria": "oci"
+        },
+        {
+            "id": 11,
+            "nom": "ordenadorFRan",
+            "preu": 1000,
+            "categoria": "electrònica"
+        }
+    ]
+}

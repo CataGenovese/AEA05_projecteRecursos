@@ -1,91 +1,169 @@
-import express from "express"
+import express from "express";
 import bodyParser from "body-parser";
-import fs from "fs"
+import fs from "fs";
 
 const app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-app.use(express.static("public"));//carpeta publica pel css
-app.set('view engine','ejs');//Fem servir el motor ejs
-app.set('views', './views'); //carpeta on desem els arxius .ejs
+app.use(express.static("public")); 
+app.set("view engine", "ejs"); 
+app.set("views", "./views"); 
 
-const readData = () => JSON.parse(fs.readFileSync('./products.json'));
-const writeData = (data) => fs.writeFileSync('./products.json', JSON.stringify(data));
+// Funciones para leer y escribir en usuaris.json
+const readData = () => JSON.parse(fs.readFileSync("./usuaris.json"));
+const readDataRecursos = () => JSON.parse(fs.readFileSync("./recursos.json"));
 
-//POST crear un nuevo producto dentro del fichero
-app.post("/products", (req, res) => {
-    const data = readData();
-    const body = req.body;
-    const newProduct = {
-        id: data.products.length + 1,
-        ...req.body,
-    };
-    data.products.push(newProduct) //añade el nuevo producto al array de productos
-    writeData(data);
-    res.json(newProduct)
+const writeData = (data) =>
+  fs.writeFileSync("./usuaris.json", JSON.stringify(data, null, 2));
+
+// Página principal
+app.get("/", (req, res) => {
+  res.render("home");
 });
 
-//GET
-/*devuelve todos los productos
-app.get("/products", (req, res) => {
-    const data = readData();
-    res.json(data.products);
+// POST: Crear un nuevo usuario
+app.post("/usuaris", (req, res) => {
+  const data = readData();
+  const newUser = {
+    id: data.usuaris.length > 0 ? data.usuaris[data.usuaris.length - 1].id + 1 : 1,
+    ...req.body,
+  };
+  data.usuaris.push(newUser);
+  writeData(data);
+  res.json(newUser);
 });
-//GET 
-/*obtener por id
-app.get("/products/:id", (req, res) => {
-    const data = readData();
-    const id = parseInt(req.params.id);
-    try {
-        const product = data.products.find((product) => product.id == id);
-        res.json(product);
-    } catch (error) {
-        console.log("Error")
-    }
-});
-*/
 
-app.get('/products', (req, res) => {
-    const user={name:"Cata"}
-    const htmlMessage = `
+// GET: Obtener todos los usuarios
+app.get("/usuaris", (req, res) => {
+  const user = { name: "Cata" };
+  const htmlMessage = `
     <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
     <a href="https://www.example.com">Visita Example</a>`;
-    const data = readData();
-    res.render("products",{user, data,htmlMessage})
-    //res.json(data.products);
- });
- 
+  const data = readData();
+  res.render("usuaris", { user, data, htmlMessage });
+});
 
-app.put("/products/:id", (req, res) => {
+// GET: Obtener un usuario por ID
+app.get("/usuaris/:id", (req, res) => {
+  const data = readData();
+  const id = parseInt(req.params.id);
+  const user = data.usuaris.find((user) => user.id === id);
+
+  if (!user) {
+    return res.status(404).json({ message: "Usuari no trobat" });
+  }
+  res.json(user);
+});
+
+// PUT: Actualizar un usuario por ID
+app.put("/usuaris/:id", (req, res) => {
+  const data = readData();
+  const id = parseInt(req.params.id);
+  const userIndex = data.usuaris.findIndex((user) => user.id === id);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ message: "Usuari no trobat" });
+  }
+
+  data.usuaris[userIndex] = {
+    ...data.usuaris[userIndex],
+    ...req.body,
+  };
+  writeData(data);
+  res.json({ message: "Usuari actualitzat correctament" });
+});
+
+// DELETE: Eliminar un usuario por ID
+app.delete("/usuaris/:id", (req, res) => {
+  const data = readData();
+  const id = parseInt(req.params.id);
+  const userIndex = data.usuaris.findIndex((user) => user.id === id);
+
+  if (userIndex === -1) {
+    return res.status(404).json({ message: "Usuari no trobat" });
+  }
+
+  data.usuaris.splice(userIndex, 1);
+  writeData(data);
+  res.json({ message: "Usuari eliminat correctament" });
+});
+
+app.get("/", (req, res) => {
+    res.send("Welcome to my API");
+});
+
+// Obtener todos los recursos
+app.get("/recursos", (req, res) => {
+    const data = readDataRecursos(); // Usa readDataRecursos() para leer el archivo correcto
+    const user = { name: "Cata" };
+    const htmlMessage = `
+        <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
+        <a href="https://www.example.com">Visita Example</a>`;
+    
+    res.render("recursos", { user, data, htmlMessage });
+});
+
+// Obtener un recurso por ID
+app.get("/recursos/:id", (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id);
+    const recurso = data.recursos.find((recurso) => recurso.id === id);
+    
+    if (recurso) {
+        res.json(recurso);
+    } else {
+        res.status(404).json({ message: "Recurso no encontrado" });
+    }
+});
+
+// Agregar un nuevo recurso
+app.post("/recursos", (req, res) => {
+    const data = readData();
+    const body = req.body;
+
+    const newRecurso = {
+        id: data.recursos.length + 1,
+        ...body,
+    };
+
+    data.recursos.push(newRecurso);
+    writeData(data);
+    res.json(newRecurso);
+});
+
+// Modificar un recurso
+app.put("/recursos/:id", (req, res) => {
     const data = readData();
     const body = req.body;
     const id = parseInt(req.params.id);
-    const productIndex = data.products.findIndex((product) => product.id === id);
-    data.products[productIndex] = {
-      ...data.products[productIndex],
-      ...body,
-    };
-    writeData(data);
-    res.json({ message: "Product updated successfully" });
-  });
+    const recursoIndex = data.recursos.findIndex((recurso) => recurso.id === id);
 
+    if (recursoIndex !== -1) {
+        data.recursos[recursoIndex] = { ...data.recursos[recursoIndex], ...body };
+        writeData(data);
+        res.json({ message: "Recurso actualizado correctamente" });
+    } else {
+        res.status(404).json({ message: "Recurso no encontrado" });
+    }
+});
 
-//DELETE 
-//eliminar un producto por su id
-app.delete("/products/:id", (req, res) => {
+// Eliminar un recurso
+app.delete("/recursos/:id", (req, res) => {
     const data = readData();
-    console.log("data!!!!!! ",data)
-    
     const id = parseInt(req.params.id);
-    console.log("param id !!!!!! ",id)
-    //Buscamos la posición del producto
-    const productIndex = data.products.findIndex(product => product.id == id)
-    data.products.splice(productIndex, 1);
-    writeData(data);
-    res.json({ message: "Producto eliminado correctamente" })
-})
+    const recursoIndex = data.recursos.findIndex((recurso) => recurso.id === id);
 
-//LISTEN
+    if (recursoIndex !== -1) {
+        data.recursos.splice(recursoIndex, 1);
+        writeData(data);
+        res.json({ message: "Recurso eliminado correctamente" });
+    } else {
+        res.status(404).json({ message: "Recurso no encontrado" });
+    }
+});
+
+
+// Iniciar servidor
 app.listen(3006, () => {
-    console.log("Servidor está escuchando...")
+  console.log("Servidor està escoltant al port 3006...");
 });

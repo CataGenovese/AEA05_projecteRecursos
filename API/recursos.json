@@ -1,0 +1,16 @@
+{
+    "recursos": [
+        {
+            "id": 2,
+            "nom": "Recurso2",
+            "estat": "actiu",
+            "categoria": 2
+        },
+        {
+            "id": 3,
+            "nom": "Recurso2",
+            "estat": "actiu",
+            "categoria": 2
+        }
+    ]
+}

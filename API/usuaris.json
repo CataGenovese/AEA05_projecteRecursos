@@ -1,0 +1,22 @@
+{
+  "usuaris": [
+    {
+      "id": 1,
+      "nom": "Saray",
+      "rol": "CompañeraClase",
+      "contrasenya": "Saray4321"
+    },
+    {
+      "id": 2,
+      "nom": "Ivan",
+      "rol": "CompañeroClase",
+      "contrasenya": "Ivan1234"
+    },
+    {
+      "id": 2,
+      "nom": "Ivan",
+      "rol": "CompañeroClase",
+      "contrasenya": "Ivan1234"
+    }
+  ]
+}
