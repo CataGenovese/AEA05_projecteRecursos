@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recursos</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
+
 <body>
     <header>
         <h1>¡Gestión de reursos por <%= user.name %>!</h1>
@@ -15,15 +17,23 @@
         <section>
             <h2>Lista de Recursos</h2>
             <ul class="product-list">
-                <% data.recursos.forEach(recurso => { %>
+                <% data.recursos.forEach(recurso=> { %>
                     <li class="product-item">
-                        <strong><%= recurso.nom %></strong> 
-                        <span><%= recurso.estat %></span>
-                        <span><%= recurso.categoria %></span>
+                        <strong>
+                            <%= recurso.nom %>
+                        </strong>
+                        <span>
+                            <%= recurso.estat %>
+                        </span>
+                        <span>
+                            <%= recurso.categoria %>
+                        </span>
+                        <a href="/recursos/<%= recurso.id %>"> Detall Recursos</a>
                     </li>
-                <% }) %>
+                    <% }) %>
             </ul>
         </section>
     </main>
 </body>
+
 </html>

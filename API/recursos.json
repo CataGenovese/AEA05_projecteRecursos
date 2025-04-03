@@ -1,16 +1,65 @@
 {
     "recursos": [
-        {
-            "id": 2,
-            "nom": "Recurso2",
-            "estat": "actiu",
-            "categoria": 2
-        },
-        {
-            "id": 3,
-            "nom": "Recurso2",
-            "estat": "actiu",
-            "categoria": 2
-        }
+      {
+        "id": 1,
+        "nom": "Laptop Dell XPS 15",
+        "estat": "Disponible",
+        "categoria": "Tecnología"
+      },
+      {
+        "id": 2,
+        "nom": "Proyector Epson",
+        "estat": "Ocupado",
+        "categoria": "Audiovisual"
+      },
+      {
+        "id": 3,
+        "nom": "Silla Ergonómica",
+        "estat": "Disponible",
+        "categoria": "Muebles"
+      },
+      {
+        "id": 4,
+        "nom": "Impresora HP LaserJet",
+        "estat": "En reparación",
+        "categoria": "Oficina"
+      },
+      {
+        "id": 5,
+        "nom": "Cámara Sony Alpha",
+        "estat": "Disponible",
+        "categoria": "Fotografía"
+      },
+      {
+        "id": 6,
+        "nom": "Mesa de reuniones",
+        "estat": "Reservado",
+        "categoria": "Muebles"
+      },
+      {
+        "id": 7,
+        "nom": "Tablet Samsung Galaxy",
+        "estat": "Disponible",
+        "categoria": "Tecnología"
+      },
+      {
+        "id": 8,
+        "nom": "Micrófono Rode NT1",
+        "estat": "Disponible",
+        "categoria": "Audiovisual"
+      },
+      {
+        "id": 9,
+        "nom": "Monitor LG UltraWide",
+        "estat": "Ocupado",
+        "categoria": "Tecnología"
+      },
+      {
+        "id": 10,
+        "nom": "Altavoces JBL",
+        "estat": "Disponible",
+        "categoria": "Audiovisual"
+      }
     ]
-}
+  }
+  
