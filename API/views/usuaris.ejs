@@ -20,6 +20,8 @@
                         <strong><%= usuari.nom %></strong> 
                         <span><%= usuari.rol %></span>
                         <span><%= usuari.contrasenya %></span>
+                        <a href="/usuaris/<%= usuari.id %>"> Detall Usuaris</a>
+                        <a href="/usuaris/put/<%= usuari.id %>"> Modificar Usuario</a>
                     </li>
                 <% }) %>
             </ul>

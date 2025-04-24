@@ -20,26 +20,32 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
-    const user = data.usuaris.find((u) => u.id === id);
+    const userName={name:"Cata"};
+    const usuari  = data.usuaris.find((u) => u.id === id);
+    res.render("usuariDetall", {usuari, userName});
 
-    if (!user) {
-        return res.status(404).json({ message: "Usuari no trobat" });
-    }
-    res.json(user);
 });
 
+// GET usuario por ID para modificar
+router.get("/put/:id", (req, res) => {
+    const data = readData();
+    const id = parseInt(req.params.id);
+    const userName={name:"Cata"};
+    const usuari  = data.usuaris.find((u) => u.id === id);
+    res.render("modificarUsuari", {usuari , userName});
 
+});
 // PUT actualizar usuario
-router.put("/:id", (req, res) => {
+router.put("/put/:id", (req, res) => {
     const data = readData();
     const id = parseInt(req.params.id);
     const userIndex = data.usuaris.findIndex((u) => u.id === id);
 
-    if (userIndex === -1) {
-        return res.status(404).json({ message: "Usuari no trobat" });
-    }
+    data.usuaris[userIndex] = {
+         ...data.usuaris[userIndex],
+          ...req.body 
+        };
 
-    data.usuaris[userIndex] = { ...data.usuaris[userIndex], ...req.body };
     writeData(data);
     res.json({ message: "Usuari actualitzat correctament" });
 });

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar usuario</title>
+</head>
+<body>
+    <h1>Modificar usuario</h1>
+
+    <label for="nom">Nombre: </label>
+    <input type="text" id="nom" name="nom" value="<%= usuari.nom %>" required>
+
+    <label for="rol">Rol: </label>
+    <input type="text" id="rol" name="rol" value="<%= usuari.rol %>" required>
+
+    <label for="contrasenya">Password: </label>
+    <input type="text" id="rol" name="rol" value="<%= usuari.rol %>" required>
+
+    <button type="submit">Actualizar</button>
+</form>
+
+</body>
+</html>

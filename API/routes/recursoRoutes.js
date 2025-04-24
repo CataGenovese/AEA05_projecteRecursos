@@ -22,7 +22,6 @@ router.get("/", (req, res) => {
 router.get("/:id",(req,res)=>{
     const data=readDataRecursos();
     const id=parseInt(req.params.id);
-
     const user={name:"Cata"};
     const recurso =data.recursos.find((recurso)=>recurso.id===id);
     res.render("recursoDetall", {recurso, user});
