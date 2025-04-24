@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Notificacions</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>¡Gestión de reursos por <%= user.name %>!</h1>
+        <h2><%- htmlMessage %></h2>
+    </header>
+    <main>
+        <section>
+            <h2>Llista de Notificacions</h2>
+            <ul class="product-list">
+                <% data.notificacions.forEach(notificacio => { %>
+                    <li class="product-item">            
+                        <strong><%= notificacio.estat %></strong> 
+                        <span><%= notificacio.fInici %></span>
+                        <span><%= notificacio.fFinal %></span>
+                        <a href="/notificacions/<%= notificacio.id %>"> Detall Notificacio</a>
+                        <a href="/notificacions/put/<%= notificacio.id %>"> Modificar Notificacio</a>
+
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

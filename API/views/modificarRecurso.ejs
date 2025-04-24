@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar recursos</title>
+</head>
+<body>
+    <h1>Modificar Recurso</h1>
+
+    <label for="nom">Nombre: </label>
+        <input type="text" id="nom" name="nom" value="<%= recurso.nom %>" required>
+
+        <label for="estat">Estado:</label>
+        <select id="estat" name="estat">
+            <option value="Disponible" <%= recurso.estat === "Disponible" ? "selected" : "" %>>Disponible</option>
+            <option value="Ocupado" <%= recurso.estat === "Ocupado" ? "selected" : "" %>>Ocupado</option>
+            <option value="Reservado" <%= recurso.estat === "Reservado" ? "selected" : "" %>>Reservado</option>
+            <option value="En reparación" <%= recurso.estat === "En reparación" ? "selected" : "" %>>En reparación</option>
+        </select>
+
+        <label for="categoria">Categoría:</label>
+        <input type="text" id="categoria" name="categoria" value="<%= recurso.categoria %>" required>
+
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+    "notificacions": [
+      {
+        "id": 1,
+        "estat": "no llegida",
+        "fInici": "2024-03-12",
+        "fFinal": "2024-03-12",
+        "missatge": "Recordatori: tens una reserva activa per al Proyector Epson."
+      },
+      {
+        "id": 2,
+        "estat": "llegida",
+        "fInici": "2024-03-10",
+        "fFinal": "2024-03-11",
+        "missatge": "Reserva completada: Laptop Dell XPS 15."
+    },
+    {
+      "id": 3,
+      "estat": "llegida",
+      "fInici": "2024-03-10",
+      "fFinal": "2024-03-11",
+      "missatge": "Reserva completada: Laptop Dell XPS 15."
+    },
+    {
+      "id": 4,
+      "estat": "llegida",
+      "fInici": "2024-03-10",
+      "fFinal": "2024-03-11",
+      "missatge": "Reserva completada: Laptop Dell XPS 15."
+    }
+    ]
+  }
+  

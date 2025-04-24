@@ -28,17 +28,6 @@ router.get("/:id", (req, res) => {
     res.json(user);
 });
 
-// POST nuevo usuario
-router.post("/", (req, res) => {
-    const data = readData();
-    const newUser = {
-        id: data.usuaris.length > 0 ? data.usuaris[data.usuaris.length - 1].id + 1 : 1,
-        ...req.body,
-    };
-    data.usuaris.push(newUser);
-    writeData(data);
-    res.json(newUser);
-});
 
 // PUT actualizar usuario
 router.put("/:id", (req, res) => {
@@ -55,6 +44,7 @@ router.put("/:id", (req, res) => {
     res.json({ message: "Usuari actualitzat correctament" });
 });
 
+/*
 // DELETE eliminar usuario
 router.delete("/:id", (req, res) => {
     const data = readData();
@@ -69,5 +59,16 @@ router.delete("/:id", (req, res) => {
     writeData(data);
     res.json({ message: "Usuari eliminat correctament" });
 });
-
+// POST nuevo usuario
+router.post("/", (req, res) => {
+    const data = readData();
+    const newUser = {
+        id: data.usuaris.length > 0 ? data.usuaris[data.usuaris.length - 1].id + 1 : 1,
+        ...req.body,
+    };
+    data.usuaris.push(newUser);
+    writeData(data);
+    res.json(newUser);
+});
+*/
 export default router;
