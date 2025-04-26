@@ -1,31 +1,31 @@
 {
   "reserves": [
     {
-      "idReserva": 1,
-      "usuari": "marta.garcia",
+      "id": 1,
+      "usuari": "Marta Garcia",
       "data_inici": "2024-04-20",
       "data_final": "2024-04-22",
       "estat": "activa",
       "notificacio": "si"
     },
     {
-      "idReserva": 2,
-      "usuari": "joan.marti",
+      "id": 2,
+      "usuari": "Joan Marti",
       "data_inici": "2024-04-10",
       "data_final": "2024-04-12",
       "estat": "completada",
       "notificacio": "no"
     },
     {
-      "idReserva": 3,
-      "usuari": "laia.soler",
+      "id": 3,
+      "usuari": "Laia.soler",
       "data_inici": "2024-04-25",
       "data_final": "2024-04-26",
       "estat": "pendent",
       "notificacio": "no"
     },
     {
-      "idReserva": 4,
+      "id": 4,
       "usuari": "david.roca",
       "data_inici": "2024-04-18",
       "data_final": "2024-04-18",
@@ -33,7 +33,7 @@
       "notificacio": "no"
     },
     {
-      "idReserva": 5,
+      "id": 5,
       "usuari": "clara.torres",
       "data_inici": "2024-04-21",
       "data_final": "2024-04-23",

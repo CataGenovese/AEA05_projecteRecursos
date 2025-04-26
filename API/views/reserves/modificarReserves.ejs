@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Reserva</title>
+    <link rel="stylesheet" type="text/css" href="/style2.css">
+</head>
+<body>
+    <header>
+        <h1>Modificar Reserva</h1>
+    </header>
+    <main>
+        <section>
+            <form action="/reserva/modificar" method="POST">
+                <label for="nom">Nombre del usuario:</label>
+                <input type="text" id="nom" name="nom" value="<%= reserva.usuari %>" required>
+                
+                <label for="fInici">Fecha de inicio:</label>
+                <input type="date" id="fInici" name="fInici" value="<%= reserva.data_inici %>" required>
+
+                <label for="fFinal">Fecha final:</label>
+                <input type="date" id="fFinal" name="fFinal" value="<%= reserva.data_final %>" required>
+
+                <button type="submit">Actualizar</button>
+            </form>
+            <a href="/reserves" class="btn">Volver</a>
+        </section>
+    </main>
+</body>
+</html>

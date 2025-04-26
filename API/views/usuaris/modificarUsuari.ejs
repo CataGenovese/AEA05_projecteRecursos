@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Usuario</title>
+    <link rel="stylesheet" type="text/css" href="/style2.css">
+</head>
+<body>
+    <header>
+        <h1>Modificar Usuario</h1>
+    </header>
+    <main>
+        <section>
+            <form action="/usuario/modificar" method="POST">
+                <label for="nom">Nombre:</label>
+                <input type="text" id="nom" name="nom" value="<%= usuari.nom %>" required>
+
+                <label for="rol">Rol:</label>
+                <input type="text" id="rol" name="rol" value="<%= usuari.rol %>" required>
+
+                <label for="contrasenya">Contraseña:</label>
+                <input type="password" id="contrasenya" name="contrasenya" value="<%= usuari.contrasenya %>" required>
+
+                <button type="submit">Actualizar</button>
+            </form>
+            <a href="/usuarios" class="btn">Volver</a>
+        </section>
+    </main>
+</body>
+</html>

@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 header {
@@ -24,21 +26,15 @@ header h1 {
     margin: 0;
 }
 
-header h2 {
-    font-size: 1rem;
-    margin-top: 8px;
-    font-weight: normal;
-    color: #ecf0f1;
-}
-
 main {
     width: 95%;
-    max-width: 1000px;
+    max-width: 800px;
     background-color: white;
-    margin: 30px 0;
+    margin-top: 30px;  /* Asegura que haya espacio entre el header y el contenido */
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 main h2 {
@@ -75,7 +71,6 @@ main h2 {
     margin-bottom: 10px;
 }
 
-/* ====== TAGS ====== */
 .product-item span {
     display: inline-block;
     font-size: 0.9rem;
@@ -97,12 +92,7 @@ span.categoria {
     color: #31708f;
 }
 
-span.rol {
-    background-color: #fcf8e3;
-    color: #8a6d3b;
-}
-
-a {
+a.btn {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 14px;
@@ -114,17 +104,51 @@ a {
     transition: background-color 0.2s ease;
 }
 
-a:hover {
+a.btn:hover {
     background-color: #2c80b4;
 }
+/* ====== GENERAL ====== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-/* ====== FORMULARIOS ====== */
-form {
+header {
+    width: 100%;
+    background-color: #34495e;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+main {
     width: 95%;
-    max-width: 600px;
+    max-width: 800px;
     background-color: white;
-    margin: 30px auto;
+    margin: 30px 0;
     padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -138,8 +162,7 @@ form label {
 }
 
 form input,
-form select,
-form textarea {
+form select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -162,5 +185,21 @@ form button {
 }
 
 form button:hover {
+    background-color: #2c80b4;
+}
+
+a.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 14px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+a.btn:hover {
     background-color: #2c80b4;
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificació detall</title>
+    <link rel="stylesheet" type="text/css" href="/style2.css">
+</head>
+<body>
+    <header>
+        <h1>Notificació detall</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Detalls de la notificació</h2>
+            <ul class="product-list">
+                <li class="product-item">
+                    <strong>Estat:</strong> <%= notificacio.nom %><br>
+                    <strong>Data inici:</strong> <%= notificacio.fInici %><br>
+                    <strong>Data final:</strong> <%= notificacio.fFinal %><br>
+                </li>
+            </ul>
+            <a href="/notificacions" class="btn">Volver</a>
+        </section>
+    </main>
+</body>
+</html>

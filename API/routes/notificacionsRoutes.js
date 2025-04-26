@@ -9,10 +9,11 @@ const writeData = (data) => fs.writeFileSync("./notificacions.json", JSON.string
 
 // GET página principal de notificacions
 router.get("/", (req, res) => {
-    const user = { name: "Cata" };  
-    const htmlMessage = `<p>Aquest és un missatge de notificació <strong>important</strong></p>`;  // Mensaje HTML de ejemplo
     const data = readData();
-    res.render("notificacions", { user, data, htmlMessage });
+    const user = { name: "Cata" };  
+    const htmlMessage = ` <p>Consulta tus notificaciones</p>
+    <a href="http://localhost:3006/">Torna enrere</a>`;  // Mensaje HTML de ejemplo
+    res.render("notificacions/notificacions", { user, data, htmlMessage });
 });
 
 
@@ -22,7 +23,7 @@ router.get("/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const user={name:"Cata"};
     const notificacio = data.notificacions.find((n) => n.id === id);
-    res.render("notificacioDetall", {notificacio, user});
+    res.render("notificacions/notificacioDetall", {notificacio, user});
 
 });
 
@@ -31,7 +32,7 @@ router.get("/put/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const user={name:"Cata"};
     const notificacio = data.notificacions.find((n) => n.id === id);
-    res.render("modificarNotificacio", {notificacio, user});
+    res.render("notificacions/modificarNotificacio", {notificacio, user});
 
 });
 

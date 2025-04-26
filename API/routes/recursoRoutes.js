@@ -13,9 +13,9 @@ const readDataRecursos = () => {
 router.get("/", (req, res) => {
     const data = readDataRecursos();
     const user = { name: "Cata" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-                         <a href="https://www.example.com">Visita Example</a>`;
-    res.render("recursos", { user, data, htmlMessage });
+    const htmlMessage = ` <p>Consulta los recursos</p>
+                         <a href="http://localhost:3006/">Torna enrere</a>`;
+    res.render("recursos/recursos", { user, data, htmlMessage });
 });
 
 // GET recurso por ID
@@ -24,7 +24,7 @@ router.get("/:id",(req,res)=>{
     const id=parseInt(req.params.id);
     const user={name:"Cata"};
     const recurso =data.recursos.find((recurso)=>recurso.id===id);
-    res.render("recursoDetall", {recurso, user});
+    res.render("recursos/recursoDetall", {recurso, user});
 });
 
 
@@ -34,7 +34,7 @@ router.get("/put/:id", (req, res) => {
     const user={name:"Cata"};
     const id=parseInt(req.params.id);
     const recurso =data.recursos.find((recurso)=>recurso.id===id);
-    res.render("modificarRecurso", {recurso, user});
+    res.render("recursos/modificarRecurso", {recurso, user});
 
 });
 

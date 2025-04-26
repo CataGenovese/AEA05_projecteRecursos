@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuari detall</title>
+    <link rel="stylesheet" type="text/css" href="/style2.css">
+</head>
+<body>
+    <header>
+        <h1>Usuari detall</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Detalls d'usuari</h2>
+            <ul class="product-list">
+                <li class="product-item">
+                    <strong>Consultado por:</strong> <%= userName.name %><br>
+                    <strong>Nombre:</strong> <%= usuari.nom %><br>
+                    <strong>Rol:</strong> <%= usuari.rol %><br>
+                    <strong>Contrasenya:</strong> <%= usuari.contrasenya %><br>
+                </li>
+            </ul>
+            <a href="/recursos" class="btn">Volver</a>
+        </section>
+    </main>
+</body>
+</html>

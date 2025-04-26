@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recurso Detalle</title>
+    <link rel="stylesheet" type="text/css" href="/style2.css">
+</head>
+<body>
+    <header>
+        <h1>¡Detalle del recurso <%= recurso.id %> por <%= user.name %>!</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Detalle Recurso</h2>
+            <ul class="product-list">
+                <li class="product-item">
+                    <strong>Nombre:</strong> <%= recurso.nom %><br>
+                    <strong>Estado:</strong> <%= recurso.estat %><br>
+                    <strong>Categoría:</strong> <%= recurso.categoria %><br>
+                    <strong>ID:</strong> <%= recurso.id %>
+                </li>
+            </ul>
+            <a href="/recursos">Volver</a>
+        </section>
+    </main>
+</body>
+</html>

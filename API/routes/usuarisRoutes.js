@@ -10,10 +10,10 @@ const writeData = (data) => fs.writeFileSync("./usuaris.json", JSON.stringify(da
 // GET página principal de usuarios
 router.get("/", (req, res) => {
     const user = { name: "Cata" };
-    const htmlMessage = `<p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-                         <a href="https://www.example.com">Visita Example</a>`;
+    const htmlMessage = ` <p>Consulta los usuarios</p>
+                         <a href="http://localhost:3006/">Torna enrere</a>`;
     const data = readData();
-    res.render("usuaris", { user, data, htmlMessage });
+    res.render("usuaris/usuaris", { user, data, htmlMessage });
 });
 
 // GET usuario por ID
@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const userName={name:"Cata"};
     const usuari  = data.usuaris.find((u) => u.id === id);
-    res.render("usuariDetall", {usuari, userName});
+    res.render("usuaris/usuariDetall", {usuari, userName});
 
 });
 
@@ -32,7 +32,7 @@ router.get("/put/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const userName={name:"Cata"};
     const usuari  = data.usuaris.find((u) => u.id === id);
-    res.render("modificarUsuari", {usuari , userName});
+    res.render("usuaris/modificarUsuari", {usuari , userName});
 
 });
 // PUT actualizar usuario

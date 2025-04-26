@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalls de la reserva</title>
+    <link rel="stylesheet" type="text/css" href="/style2.css">
+</head>
+<body>
+    <header>
+        <h1>Detalls de la reserva</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Detalls de la reserva</h2>
+            <ul class="product-list">
+                <li class="product-item">
+                    <strong>Usuari a nom de la reserva:</strong> <%= reserva.usuari %><br>
+                    <strong>Data inici:</strong> <%= reserva.data_inici %><br>
+                    <strong>Data final:</strong> <%= reserva.data_final %><br>
+                    <strong>Estat de la reserva:</strong> <span class="estat"><%= reserva.estat %></span>
+                </li>
+            </ul>
+            <a href="/reserves" class="btn">Volver</a>
+        </section>
+    </main>
+</body>
+</html>
