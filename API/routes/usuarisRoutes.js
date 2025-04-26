@@ -4,8 +4,8 @@ import fs from "fs";
 const router = express.Router();
 
 // Función para leer y escribir el archivo de usuarios
-const readData = () => JSON.parse(fs.readFileSync("./usuaris.json"));
-const writeData = (data) => fs.writeFileSync("./usuaris.json", JSON.stringify(data, null, 2));
+const readData = () => JSON.parse(fs.readFileSync(".json/usuaris.json"));
+const writeData = (data) => fs.writeFileSync(".json/usuaris.json", JSON.stringify(data, null, 2));
 
 // GET página principal de usuarios
 router.get("/", (req, res) => {

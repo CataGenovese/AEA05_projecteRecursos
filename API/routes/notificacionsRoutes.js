@@ -4,8 +4,8 @@ import fs from "fs";
 const router = express.Router();
 
 // Función para leer y escribir el archivo de notificacions
-const readData = () => JSON.parse(fs.readFileSync("./notificacions.json"));
-const writeData = (data) => fs.writeFileSync("./notificacions.json", JSON.stringify(data, null, 2));
+const readData = () => JSON.parse(fs.readFileSync(".json/notificacions.json"));
+const writeData = (data) => fs.writeFileSync(".json/notificacions.json", JSON.stringify(data, null, 2));
 
 // GET página principal de notificacions
 router.get("/", (req, res) => {

@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Función para leer el archivo JSON de reservas
 const readDataReserves = () => {
-    return JSON.parse(fs.readFileSync("./reserves.json"));
+    return JSON.parse(fs.readFileSync(".json/reserves.json"));
 };
 
 const writeData= () => {

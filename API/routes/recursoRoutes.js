@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Función para leer el archivo JSON de recursos
 const readDataRecursos = () => {
-    return JSON.parse(fs.readFileSync("./recursos.json"));
+    return JSON.parse(fs.readFileSync('.json/recursos.json'));
 };
 
 
