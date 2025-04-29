@@ -12,6 +12,9 @@ router.get("/", (req, res) => {
     const user = { name: "Cata" };
     const htmlMessage = ` <p>Consulta los usuarios</p>
                          <a href="http://localhost:3006/">Torna enrere</a>`;
+    /*para volver a home
+    const htmlMessage = ` <p>Consulta los usuarios</p>
+                         <a href="/home">Torna enrere</a>`;*/
     const data = readData();
     res.render("usuaris/usuaris", { user, data, htmlMessage });
 });
